@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>访问</title>
+</head>
+<body>
+	<script type="text/javascript">		
+		function addScript(src){
+			var script = document.createElement("script");
+			script.setAttribute("type","text/javascript");
+			script.src = src;
+			document.body.appendChild(script);
+		}
+		window.onload=function(){
+			addScript("http://localhost:8080/data/1.json?callback=callbackData");
+		}
+		function callbackData(data){
+			var obj = data.shop_data;
+			console.log(obj)
+			// for(var i = 0;i<data.length;i++){
+
+			// }
+		}
+	</script>
+</body>
+</html>
